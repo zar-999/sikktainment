@@ -1,22 +1,8 @@
 
 body {
-	background-image: url("../img/background_login@2x.png");
-	background-repeat: no-repeat;
-	background-size: 100%;
+
 }
 
 .Logo {
-	padding-top: 140px;
-	
-		
-}
-
-.Button {
-	padding-top: 30px;
-	text-align: center;
-
-}
-
-.form-control{
-	text-align: center;
+	padding-top: 130px;	
 }
