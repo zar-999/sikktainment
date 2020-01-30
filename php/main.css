@@ -1,0 +1,62 @@
+/* CSS Document */
+
+
+.text-black{
+	color: black;
+
+}
+
+
+body {
+	background-image: url("../img/background.png");
+	background-image: linear-gradient();
+	background-repeat: no-repeat;
+}
+
+h4{
+	background-color: rgba(241,230,81,0.70);
+	width: 200px;
+}
+
+
+td {
+	text-align: center;
+}
+
+
+
+header {
+	background-color: white;
+}
+
+html {
+	max-width: 500px;
+	align-content: center;
+}
+
+.VS {
+	font-size: 25px;
+	background-color: rgba(241,230,81,0.70);
+	width: 350px;
+	text-align: center;
+}
+
+.VS1 {
+	padding-top: 10px;
+}
+
+.VK {
+	font-size: 20px;
+	background-color: rgba(241,230,81,0.70);
+	width: 230px;
+	text-align: left;
+}
+
+.VK1 {
+	padding-left: 15px;
+	padding-top: 50px
+}
+
+.DN {
+	padding-top: 30px;
+}

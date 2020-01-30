@@ -1,3 +1,9 @@
+<?php
+
+include_once 'login.php';
+
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -16,6 +22,35 @@
 	
 <body>
 
+	<?php
+		if($_POST["un"] != NULL && $_POST["pw"] != NULL){
+			$username = $_POST["un"];
+			$password = $_POST["pw"];
+			
+			$sql = "SELECT username 
+		              FROM promoter_login
+				     WHERE username == $username;";
+	
+			$result = mysqli_query($conn, $sql);
+			$resultcheck = mysqli_num_rows($result);
+			
+			if($resultcheck > 0){
+				$row = mysqli_fetch_assoc($result);
+				if ($row['password'] == $password){
+					echo "<a href=main.php</a>";
+				}
+					
+			}
+				
+			
+		}
+
+	
+
+		
+	
+	?>
+	
 	<div class="container">  
 	 
 		<div class="row justify-content-center" > 		
@@ -27,10 +62,10 @@
 		<div class="login-form">
    			<form  method="post">      
         	<div class="form-group">
-	            <input type="text" class="form-control" placeholder="Username" required="required">
+	            <input type="text" name="un" class="form-control" placeholder="Username" required="required">
         	</div>
         	<div class="form-group">
-           		<input type="password" class="form-control" placeholder="Password" required="required">
+           		<input type="password" name="pw" class="form-control" placeholder="Password" required="required">
         	</div>
         	<div class="form-group">
            		<button type="submit" class="btn btn-primary btn-block btn-dark">Log in</button>
