@@ -44,7 +44,6 @@ include_once 'login.php';
     		</form>
 			
 	<?php
-
 			$username = $_POST["un"];
 			$password = $_POST["pw"];
 			
@@ -55,31 +54,22 @@ include_once 'login.php';
 			$result = mysqli_query($conn, $sql);
 			$resultcheck = mysqli_num_rows($result);
 			
-			echo($result);
-			
 			if($resultcheck > 0){
 				$row = mysqli_fetch_assoc($result);
 				if ($row['password'] == $password){
-					echo ("<a href=main.php</a>");
+					echo "<a href=main.php</a>";
 				}{
-					echo("login failed");
+					echo"login failed";
 				}
 					
 			}else{
-				echo("connection failed");
+				echo "connection failed";
 			}	
-	
 	?>
 			
 		</div>
 		
 	</div>
-
-
-
-
-
-
 
 
 <!--	Bootstrap JS		-->
