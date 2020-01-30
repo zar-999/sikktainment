@@ -21,35 +21,6 @@ include_once 'login.php';
 </head> 
 	
 <body>
-
-	<?php
-		if($_POST["un"] != NULL && $_POST["pw"] != NULL){
-			$username = $_POST["un"];
-			$password = $_POST["pw"];
-			
-			$sql = "SELECT username 
-		              FROM promoter_login
-				     WHERE username == $username;";
-	
-			$result = mysqli_query($conn, $sql);
-			$resultcheck = mysqli_num_rows($result);
-			
-			if($resultcheck > 0){
-				$row = mysqli_fetch_assoc($result);
-				if ($row['password'] == $password){
-					echo "<a href=main.php</a>";
-				}
-					
-			}
-				
-			
-		}
-
-	
-
-		
-	
-	?>
 	
 	<div class="container">  
 	 
@@ -71,6 +42,35 @@ include_once 'login.php';
            		<button type="submit" class="btn btn-primary btn-block btn-dark">Log in</button>
         	</div>     
     		</form>
+			
+	<?php
+
+			$username = $_POST["un"];
+			$password = $_POST["pw"];
+			
+			$sql = "SELECT *
+		              FROM promoter_login
+				     WHERE username = $username;";
+	
+			$result = mysqli_query($conn, $sql);
+			$resultcheck = mysqli_num_rows($result);
+			
+			echo($result);
+			
+			if($resultcheck > 0){
+				$row = mysqli_fetch_assoc($result);
+				if ($row['password'] == $password){
+					echo ("<a href=main.php</a>");
+				}{
+					echo("login failed");
+				}
+					
+			}else{
+				echo("connection failed");
+			}	
+	
+	?>
+			
 		</div>
 		
 	</div>

@@ -1,10 +1,9 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Unbenanntes Dokument</title>
-</head>
+<?php
 
-<body>
-</body>
-</html>
+$dbServer = "localhost";
+$dbUsername = "at29620_sikktainmentdb";
+$dbPasswort = "Soldout123!";
+$dbName = "at29620_promoter";
+
+$conn =
+msqli_connect($dbServer,$dbUsername,$dbPasswort,$dbName);
